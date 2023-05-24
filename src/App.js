@@ -3,8 +3,8 @@ import Home from './Components/Home';
 import AddEventModal from './Components/AddEventModal';
 import { store } from './redux/store/index'
 import { Provider } from 'react-redux'
+import { HashRouter } from 'react-router-dom';
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
@@ -12,12 +12,12 @@ import {
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <HashRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/addEventModal" element={<AddEventModal />} />
     </Routes>
-      </Router>,
+      </HashRouter>,
     </Provider>
   );
 }
